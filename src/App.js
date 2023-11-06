@@ -45,6 +45,9 @@ class RegistrationPage extends Component {
     // Validation for RFID no.
     if (!rfidno || !/^[0-9]{10}$/.test(rfidno)) {
       errors.rfidno = 'RFID no. must be 20 digits';
+
+      // clear the input fields for rfid when an error occurs of digits
+      this.setState({ rfidno:'' });
     }
 
     // Display confirmation dialog
